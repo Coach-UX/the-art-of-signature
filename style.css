@@ -1,21 +1,21 @@
 body {
-  background-size: cover !important;
-  background-image: url("bg.jpg") !important;
   font-family: 'Barlow Condensed', sans-serif;
   text-transform: uppercase;
   text-align: center;
 }
 
 canvas {
-  display: inline-block;
-  height: 100vh;
-  cursor: -webkit-grab;
-  cursor: grab;
+  /* display: inline-block;
+  height: 100vh; */
+  background-size: cover !important;
+  background-image: url("bg-tyler.jpg") !important;
+  /* cursor: -webkit-grab;
+  cursor: grab; */
 }
 
 canvas:active {
-  cursor: -webkit-grabbing;
-  cursor: grabbing;
+  /* cursor: -webkit-grabbing;
+  cursor: grabbing; */
 }
 
 h1 {
@@ -27,10 +27,8 @@ h1 {
   line-height: 7rem;
 }
 
-/* .logo {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 25%;
-} */
+.section {
+  position: relative;
+  height: 80vh;
+  width: 100vw;
+}
