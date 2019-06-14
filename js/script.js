@@ -1,39 +1,39 @@
-// install plugin
-Matter.use(
-  'matter-attractors' // PLUGIN_NAME
-);
-
 var canvas = document.getElementById('canvas');
 
-// Matter.js module aliases
+// install plugin
+Matter.use(
+  'matter-attractors'
+);
+
+// variables
 var Engine = Matter.Engine,
     World = Matter.World,
     Body = Matter.Body,
     Bodies = Matter.Bodies,
     Common = Matter.Common,
-    Constraint = Matter.Constraint,
-    Composites = Matter.Composites,
     MouseConstraint = Matter.MouseConstraint,
     Events = Matter.Events,
     Render = Matter.Render,
-    Mouse = Matter.Mouse;
+    Mouse = Matter.Mouse,
+    height = window.innerHeight,
+    width = window.innerWidth;
 
-// create variables for 100% height/width
-var height = window.innerHeight;
-var width = window.innerWidth;
+// create engine
+var engine = Engine.create();
 
-// create a Matter.js engine
-var engine = Engine.create(canvas, {
-  render: {
+// create renderer
+var render = Render.create({
+    element: canvas,
+    engine: engine,
     options: {
-      wireframes: false,
-      showAngleIndicator: false,
-      background: 'transparent',
-      height: height,
-      width: width
+        wireframes: false,
+        showAngleIndicator: false,
+        background: 'transparent',
+        height: height,
+        width: width
     }
-  }
 });
+Render.run(render);
 
 // create world
 var world = engine.world;
@@ -42,11 +42,12 @@ world.gravity.y = 0.01;
 world.bodies = [];
 
 // create a body with an attractor
-var attractiveBody = Bodies.circle(width / 2, height / 2, 80, {
+var attractiveBody = Bodies.circle(width / 2, height / 2, 70, {
   render: {
-    fillStyle: '#F3E0D2'
+    fillStyle: '#718FC6'
   },
   isStatic: true,
+
   plugin: {
     attractors: [
       function(bodyA, bodyB) {
@@ -61,22 +62,12 @@ var attractiveBody = Bodies.circle(width / 2, height / 2, 80, {
 World.add(world, attractiveBody);
 
 // randomize starting starting X & Y positions
-let randomX = Common.random(width/4, width);
-let randomY = Common.random(0, height-height/3);
+let randomX = Common.random(width/4, width),
+    randomY = Common.random(0, height-height/3);
 
 // main bodies
 var bodies = function () {
-    return [
-    Bodies.polygon(Common.random(width/2, width), Common.random(0, height/2), 3, 200, {
-      density: .000008,
-      frictionAir: 0.006,
-      restitution: 0.0003,
-      friction: 0.0001,
-      render: {
-        sprite: {
-          texture: Common.shuffle('img/gianni.svg'),
-          xScale: .8,yScale: .8
-      }}}),
+  return [
     Bodies.circle(randomX, randomY, 120, {
       density: .000008,
       frictionAir: 0.006,
@@ -87,6 +78,16 @@ var bodies = function () {
           texture: 'img/cherries.png',
           xScale: .7,yScale:.7
         }}}),
+    Bodies.polygon(Common.random(width/2, width), Common.random(0, height/2), 3, 200, {
+      density: .000008,
+      frictionAir: 0.006,
+      restitution: 0.0003,
+      friction: 0.0001,
+      render: {
+        sprite: {
+          texture: ('img/gianni.svg'),
+          xScale: .8,yScale: .8
+      }}}),
     Bodies.rectangle(randomX, randomY, 220, 150, {
       density: .000008,
       frictionAir: 0.0006,
@@ -147,45 +148,47 @@ var bodies = function () {
           texture: 'img/pretzel.png',
           xScale: .6, yScale: .6
       }}})
-    ]
-  };
+  ]
+};
 World.add(world, bodies());
 
-//add a mouse-controlled constraint
-var mouseConstraint = MouseConstraint.create(engine, { 
-    constraint: { 
-      render: { 
-        visible: false 
-      } 
-    }
- });
-mouseConstraint.mouse.element.removeEventListener("mousewheel", mouseConstraint.mouse.mousewheel);
-mouseConstraint.mouse.element.removeEventListener("DOMMouseScroll", mouseConstraint.mouse.mousewheel);
-
-World.add(world, mouseConstraint);
 
 // add mouse control
-var mouse = Mouse.create(engine.canvas);
+var mouse = Mouse.create(render.canvas);
 
+// allow page scrolling while on the canvas
+mouse.element.removeEventListener("mousewheel", mouse.mousewheel);
+mouse.element.removeEventListener("DOMMouseScroll", mouse.mousewheel);
+
+// smoothly move the attractor body towards the mouse
 Events.on(engine, 'afterUpdate', function() {
     if (!mouse.position.x) {
       return;
     }
-
-    // smoothly move the attractor body towards the mouse
-    Body.translate(attractiveBody, {
-        x: (mouse.position.x - attractiveBody.position.x) * 0.25,
-        y: (mouse.position.y - attractiveBody.position.y) * 0.25
-    });
+  Body.translate(attractiveBody, {
+      x: (mouse.position.x - attractiveBody.position.x) * 0.25,
+      y: (mouse.position.y - attractiveBody.position.y) * 0.25
+  });
 });
 
-// multiply bodies on mouse click
+// add mouse constraint
+var mouseConstraint = MouseConstraint.create(engine, { 
+  mouse: mouse,
+  constraint: {
+      render: {
+          visible: false
+      }
+  }
+ });
+World.add(world, mouseConstraint);
+
+// add more objects on mouse click
 Events.on(mouseConstraint, "mouseup", function(event) {
   World.add(world, bodies());
 });
 
- // run the engine
- Engine.run(engine);
+// run the engine
+Engine.run(engine);
 
 
 
@@ -196,6 +199,13 @@ Events.on(mouseConstraint, "mouseup", function(event) {
 
 
 // ARCHIVED SNIPPETS
+// alt scrolling fix
+      // var mouse = Matter.Mouse.create(canvas,  {
+      //     enabledEvents: {
+      //       mousewheel: false,
+      //     }
+      //   }
+      // );
  // add boundaries to prevent objects from going outside of the canvas
       // var offset = 10,
       //   options = {

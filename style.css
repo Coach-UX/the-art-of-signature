@@ -1,28 +1,11 @@
-body {
-  font-family: 'Barlow Condensed', sans-serif;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-canvas {
-  /* display: inline-block;
-  height: 100vh; */
-  background-size: cover !important;
-  background-image: url("bg-tyler.jpg") !important;
-  /* cursor: -webkit-grab;
-  cursor: grab; */
-}
-
-canvas:active {
-  /* cursor: -webkit-grabbing;
-  cursor: grabbing; */
-}
-
 h1 {
   position: absolute;
   left: 50%;
   top: 45%;
   transform: translate(-50%, -50%);
+  font-family: 'Barlow Condensed', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
   font-size: 8rem;
   line-height: 7rem;
 }
@@ -31,4 +14,57 @@ h1 {
   position: relative;
   height: 80vh;
   width: 100vw;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-color: #F3E0D2;
+}
+/* DESKTOP */
+@media screen and (min-device-width: 768px) {
+  .section {
+    height: 95vh;
+  }
+}
+
+
+
+
+/* backgrounds */
+.tyler {
+  background-image: url('img/bg/bg-tyler.jpg');
+}
+.gianni {
+  background-image: url('img/bg/bg-gianni-.jpg');
+}
+.culver {
+  background-image: url('img/bg/bg-culver.jpg');
+}
+.kendra {
+  background-image: url('img/bg/bg-kendra.jpg');
+}
+.hunter {
+  background-image: url('img/bg/bg-hunter.jpg');
+}
+.ooo {
+  background-image: url('img/bg/bg-ooo.jpg');
+}
+.sudit {
+  background-image: url('img/bg/bg-sudit.jpg');
+  background-position: left;
+  background-size: contain;
+}
+@media (orientation:portrait) {
+  .gianni {
+    background-image: url('img/bg/bg-gianni-mobile.jpg');
+  }
+  .kendra {
+    background-image: url('img/bg/bg-kendra-mobile.jpg');
+  }
+  .hunter {
+    background-image: url('img/bg/bg-hunter-mobile.jpg');
+  }
+  .ooo {
+    background-image: url('img/bg/bg-ooo-mobile.jpg');
+  }
 }
