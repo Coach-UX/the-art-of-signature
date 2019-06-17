@@ -85,7 +85,7 @@ var bodies = function () {
       friction: 0.0001,
       render: {
         sprite: {
-          texture: ('img/gianni.svg'),
+          texture: ('img/gianni.png'),
           xScale: .8,yScale: .8
       }}}),
     Bodies.rectangle(randomX, randomY, 220, 150, {

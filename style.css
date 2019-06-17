@@ -23,7 +23,7 @@ h1 {
 /* DESKTOP */
 @media screen and (min-device-width: 768px) {
   .section {
-    height: 95vh;
+    height: 100vh;
   }
 }
 
