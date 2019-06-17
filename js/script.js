@@ -19,11 +19,13 @@ var Engine = Matter.Engine,
     Render = Matter.Render,
     Mouse = Matter.Mouse;
 
+
+    
 // create a Matter.js engine
 var engine = Engine.create(canvas, {
   render: {
     options: {
-      wireframes: false,
+      wireframes: true,
       showAngleIndicator: false,
       // background: 'transparent',
       background: '#F3E0D2',
@@ -32,6 +34,7 @@ var engine = Engine.create(canvas, {
     }
   }
 });
+
 
 // create variables for 100% height/width
 var height = window.innerHeight;
@@ -80,9 +83,9 @@ World.add(world, mouseConstraint);
 
 
 // create a body with an attractor
-var attractiveBody = Bodies.circle(width / 2, height / 2, 50, {
+var attractiveBody = Bodies.circle(width / 2, height / 2, 10, {
   render: {
-    // fillStyle: 'transparent'
+    fillStyle: 'transparent'
   },
   isStatic:true,
   plugin: {
@@ -98,6 +101,14 @@ var attractiveBody = Bodies.circle(width / 2, height / 2, 50, {
 });
 World.add(world, attractiveBody);
 
+
+ var vert = [
+  {x : 0 , y : 0},
+  {x : 0 , y : 50},
+  {x : 25 , y : 25},
+  {x : 50 , y : 50},
+  {x : 50 , y : 0}
+]
 
 // add some bodies that to be attracted
 for (var i = 0; i < 1; i += 1) {
@@ -125,16 +136,16 @@ for (var i = 0; i < 1; i += 1) {
         xScale: .8,yScale: .8
       }}});
 
-  // var body3 = Bodies.circle(200, height-200, 120, {
-  //   density: .000008,
-  //   frictionAir: 0.06,
-  //   restitution: 0.3,
-  //   friction: 0.01,
-  //   render: {
-  //       sprite: {
-  //       texture: 'img/3.png',
-  //       xScale: 1, yScale: 1
-  //     }}});
+  var body3 = Bodies.circle(200, height-200, 120, {
+    density: .000008,
+    frictionAir: 0.06,
+    restitution: 0.3,
+    friction: 0.01,
+    render: {
+        sprite: {
+        texture: 'img/3.png',
+        xScale: 1, yScale: 1
+      }}});
 
   var body4 = Bodies.rectangle(200, 200, 400, 250, {
     density: .000008,
@@ -166,7 +177,7 @@ for (var i = 0; i < 1; i += 1) {
         texture: 'img/6.png',
         xScale: 1, yScale: 1
     }}});
-  var body7 = Bodies.rectangle(width/2, height-200, 600, 100, {
+  var body7 = Bodies.fromVertices(width/2, height-200, vert, {
     density: .000008,
     frictionAir: 0.06,
     restitution: 1,
@@ -209,7 +220,7 @@ for (var i = 0; i < 1; i += 1) {
   
   World.add(world, body);
   World.add(world, body2);
-  // World.add(world, body3);
+  World.add(world, body3);
   World.add(world, body4);
   World.add(world, body5);
   World.add(world, body6);
@@ -219,8 +230,7 @@ for (var i = 0; i < 1; i += 1) {
   World.add(world, body10);
 }
 
-// add mouse control
-var mouse = Mouse.create(engine.canvas);
+
 
 Events.on(engine, 'afterUpdate', function() {
     if (!mouse.position.x) {
