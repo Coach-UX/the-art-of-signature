@@ -190,9 +190,20 @@ var mouseConstraint = MouseConstraint.create(engine, { 
  });
 World.add(world, mouseConstraint);
 
-// add more objects on mouse click
+// add more bodies and cycle through background images on every mouse click
+var backgrounds = ["tyler","gianni","kendra","culver","hunter","ooo"];
+var i = 0;
+
+  // get next item in backgrounds array
+  function nextItem() {
+      i = i + 1;
+      i = i % backgrounds.length;
+      return backgrounds[i];
+  };
+
 Events.on(mouseConstraint, "mouseup", function(event) {
   World.add(world, bodies());
+  document.getElementById('canvas').className = 'section ' + nextItem();
 });
 
 // run the engine

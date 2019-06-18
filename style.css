@@ -17,8 +17,12 @@ h1 {
   overflow: hidden;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top center;
-  background-color: #F4E1D3;
+  background-position: center center;
+  background-color: #F3E0D2;
+}
+.preload {
+  background-image: url('img/bg/bg-tyler.jpg'), url('img/bg/bg-gianni.jpg'), url('img/bg/bg-kendra.jpg'),  url('img/bg/bg-culver.jpg'), url('img/bg/bg-hunter.jpg'), url('img/bg/bg-ooo.jpg');
+  transition: background-image .2s ease-in;
 }
 /* DESKTOP */
 @media screen and (min-device-width: 768px) {
@@ -33,21 +37,27 @@ h1 {
 /* backgrounds */
 .tyler {
   background-image: url('img/bg/bg-tyler.jpg');
+    transition: background-image .2s ease-in;
 }
 .gianni {
-  background-image: url('img/bg/bg-gianni-.jpg');
+  background-image: url('img/bg/bg-gianni.jpg');
+    transition: background-image .2s ease-in;
 }
 .culver {
   background-image: url('img/bg/bg-culver.jpg');
+    transition: background-image .2s ease-in;
 }
 .kendra {
   background-image: url('img/bg/bg-kendra.jpg');
+    transition: background-image .2s ease-in;
 }
 .hunter {
   background-image: url('img/bg/bg-hunter.jpg');
+    transition: background-image .2s ease-in;
 }
 .ooo {
   background-image: url('img/bg/bg-ooo.jpg');
+    transition: background-image .2s ease-in;
 }
 .sudit {
   background-image: url('img/bg/bg-sudit.jpg');
@@ -55,8 +65,14 @@ h1 {
   background-size: contain;
 }
 @media (orientation:portrait) {
+  .tyler {
+    background-image: url('img/bg/bg-tyler-mobile.jpg');
+  }
   .gianni {
     background-image: url('img/bg/bg-gianni-mobile.jpg');
+  }
+  .culver {
+    background-image: url('img/bg/bg-culver-mobile.jpg');
   }
   .kendra {
     background-image: url('img/bg/bg-kendra-mobile.jpg');
@@ -66,5 +82,9 @@ h1 {
   }
   .ooo {
     background-image: url('img/bg/bg-ooo-mobile.jpg');
+  }
+
+  .preload {
+      background-image: url('img/bg/bg-tyler-mobile.jpg'), url('img/bg/bg-gianni-mobile.jpg'), url('img/bg/bg-kendra-mobile.jpg'), url('img/bg/bg-culver-mobile.jpg'),  url('img/bg/bg-hunter-mobile.jpg'), url('img/bg/bg-ooo-mobile.jpg');
   }
 }
