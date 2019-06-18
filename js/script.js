@@ -91,8 +91,7 @@ var bodies = function () {
       friction: 0.01,
       render: {
         sprite: {
-          texture: 'img/cherries.png',
-          xScale: .7,yScale:.7
+          texture: 'img/cherries.png'
         }}}),
     Bodies.fromVertices(randomX, randomY, gianni, {
       density: .000008,
@@ -101,9 +100,8 @@ var bodies = function () {
       friction: 0.0001,
       render: {
         sprite: {
-          texture: ('img/gianni.png'),
-          xScale: .8,yScale: .8
-      }}}),
+          texture: ('img/gianni.png')
+        }}}),
     Bodies.fromVertices(randomX, randomY, baby, {
       density: .000008,
       frictionAir: 0.0006,
@@ -111,8 +109,7 @@ var bodies = function () {
       friction: 0.01,
       render: {
         sprite: {
-          texture: 'img/baby.png',
-          xScale: .5, yScale: .5
+          texture: 'img/baby.png'
         }}}),
     Bodies.fromVertices(randomX, randomY, flower, {
       density: .000008,
@@ -121,8 +118,7 @@ var bodies = function () {
       friction: 0.01,
       render: {
         sprite: {
-          texture: 'img/flower.png',
-          xScale: .8, yScale: .8
+          texture: 'img/flower.png'
       }}}),
     Bodies.fromVertices(randomX, randomY, newyork, {
       density: .000008,
@@ -131,8 +127,7 @@ var bodies = function () {
       friction: 0.01,
       render: {
         sprite: {
-          texture: 'img/newyork.png',
-          xScale: .8, yScale: .8
+          texture: 'img/newyork.png'
       }}}),
     Bodies.circle(randomX, randomY, 120, {
       density: .000008,
@@ -141,8 +136,7 @@ var bodies = function () {
       friction: 0.01,
       render: {
         sprite: {
-          texture: 'img/cactus.png',
-          xScale: 1, yScale: 1
+          texture: 'img/cactus.png'
       }}}),
     Bodies.fromVertices(randomX, randomY, vase, {
       density: .000008,
@@ -151,19 +145,17 @@ var bodies = function () {
       friction: 0.01,
       render: {
         sprite: {
-          texture: 'img/vase.png',
-          xScale: 1, yScale: 1
+          texture: 'img/vase.png'
       }}}),
-   Bodies.fromVertices(randomX, randomY, pretzel, {
-      density: .000008,
-      frictionAir: 0.0006,
-      restitution: 0.3,
-      friction: 0.01,
-      render: {
-        sprite: {
-          texture: 'img/pretzel.png',
-          xScale: .6, yScale: .6
-      }}})
+    Bodies.fromVertices(randomX, randomY, pretzel, {
+       density: .000008,
+       frictionAir: 0.0006,
+       restitution: 0.3,
+       friction: 0.01,
+       render: {
+         sprite: {
+           texture: 'img/pretzel.png'
+       }}})
   ]
 };
 World.add(world, bodies());
