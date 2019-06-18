@@ -17,6 +17,8 @@ var Engine = Matter.Engine,
     Mouse = Matter.Mouse,
     height = window.innerHeight,
     width = window.innerWidth;
+    Vertices = Matter.Vertices
+ 
 
 // create engine
 var engine = Engine.create();
@@ -65,6 +67,13 @@ World.add(world, attractiveBody);
 let randomX = Common.random(width/4, width),
     randomY = Common.random(0, height-height/3);
 
+
+
+
+// var vert = Matter.Vertices.fromPath("x1 y1 x2 y2 .....")
+
+// var vert = Vertices.fromPath('50 0 63 38 100 38 69 59 82 100 50 75 18 100 31 59 0 38 37 38');
+
 // main bodies
 var bodies = function () {
   return [
@@ -86,7 +95,7 @@ var bodies = function () {
       render: {
         sprite: {
           texture: ('img/gianni.svg'),
-          xScale: .8,yScale: .8
+          xScale: .8, yScale: .8
       }}}),
     Bodies.rectangle(randomX, randomY, 220, 150, {
       density: .000008,
@@ -128,7 +137,7 @@ var bodies = function () {
           texture: 'img/cactus.png',
           xScale: 1, yScale: 1
       }}}),
-    Bodies.rectangle(randomX, randomY, 150, 500, {
+    Bodies.rectangle(randomY, randomY, 200, 450, {
       density: .000008,
       frictionAir: 0.006,
       restitution: 0.3,
