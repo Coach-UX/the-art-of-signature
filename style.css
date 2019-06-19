@@ -9,7 +9,6 @@ h1 {
   font-size: 8rem;
   line-height: 7rem;
 }
-
 .section {
   position: relative;
   height: 80vh;
@@ -20,8 +19,13 @@ h1 {
   background-position: center center;
   background-color: #F3E0D2;
 }
+.sudit {
+  background-image: url('img/bg/bg-sudit.jpg');
+  background-position: left;
+  background-size: contain;
+}
 .preload {
-  background-image: url('img/bg/bg-tyler.jpg'), url('img/bg/bg-gianni.jpg'), url('img/bg/bg-kendra.jpg'),  url('img/bg/bg-culver.jpg'), url('img/bg/bg-hunter.jpg'), url('img/bg/bg-ooo.jpg');
+  background-image: url('img/bg/bg-tyler.jpg'), url('img/bg/bg-pink.jpg'), url('img/bg/bg-gianni.jpg'),  url('img/bg/bg-blue.jpg'), url('img/bg/bg-culver.jpg'), url('img/bg/bg-red.jpg');
   transition: background-image .2s ease-in;
 }
 /* DESKTOP */
@@ -37,32 +41,33 @@ h1 {
 /* backgrounds */
 .tyler {
   background-image: url('img/bg/bg-tyler.jpg');
-    transition: background-image .2s ease-in;
+  background-color: #CDA479;
+  transition: all .2s ease-in;
 }
 .gianni {
   background-image: url('img/bg/bg-gianni.jpg');
-    transition: background-image .2s ease-in;
+  background-color: #F8333E;
+  transition: all .2s ease-in;
 }
 .culver {
   background-image: url('img/bg/bg-culver.jpg');
-    transition: background-image .2s ease-in;
+  background-color: #F0E8D8;
+  transition: all .2s ease-in;
 }
-.kendra {
-  background-image: url('img/bg/bg-kendra.jpg');
-    transition: background-image .2s ease-in;
+.pink {
+  background-image: url('img/bg/bg-pink.jpg');
+  background-color: #C8878D;
+  transition: all .2s ease-in;
 }
-.hunter {
-  background-image: url('img/bg/bg-hunter.jpg');
-    transition: background-image .2s ease-in;
+.blue {
+  background-image: url('img/bg/bg-blue.jpg');
+  background-color: #95A8CB;
+  transition: all .2s ease-in;
 }
-.ooo {
-  background-image: url('img/bg/bg-ooo.jpg');
-    transition: background-image .2s ease-in;
-}
-.sudit {
-  background-image: url('img/bg/bg-sudit.jpg');
-  background-position: left;
-  background-size: contain;
+.red {
+  background-image: url('img/bg/bg-red.jpg');
+  background-color: #AB004F;
+  transition: all .2s ease-in;
 }
 @media (orientation:portrait) {
   .tyler {
@@ -74,17 +79,18 @@ h1 {
   .culver {
     background-image: url('img/bg/bg-culver-mobile.jpg');
   }
-  .kendra {
-    background-image: url('img/bg/bg-kendra-mobile.jpg');
+  .pink {
+    background-image: url('img/bg/bg-pink-mobile.jpg');
   }
-  .hunter {
-    background-image: url('img/bg/bg-hunter-mobile.jpg');
+  .blue {
+    background-image: url('img/bg/bg-blue-mobile.jpg');
   }
-  .ooo {
-    background-image: url('img/bg/bg-ooo-mobile.jpg');
+  .red {
+    background-image: url('img/bg/bg-red-mobile.jpg');
   }
 
   .preload {
-      background-image: url('img/bg/bg-tyler-mobile.jpg'), url('img/bg/bg-gianni-mobile.jpg'), url('img/bg/bg-kendra-mobile.jpg'), url('img/bg/bg-culver-mobile.jpg'),  url('img/bg/bg-hunter-mobile.jpg'), url('img/bg/bg-ooo-mobile.jpg');
+      background-image: url('img/bg/bg-tyler-mobile.jpg'), url('img/bg/bg-pink-mobile.jpg'), url('img/bg/bg-gianni-mobile.jpg'), url('img/bg/bg-blue-mobile.jpg'),  url('img/bg/bg-culver-mobile.jpg'), url('img/bg/bg-red-mobile.jpg');
   }
+
 }
