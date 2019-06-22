@@ -1,17 +1,21 @@
-h1 {
+#canvas p {
   position: absolute;
   left: 50%;
-  top: 45%;
+  top: 50%;
   transform: translate(-50%, -50%);
   font-family: 'Barlow Condensed', sans-serif;
   text-transform: uppercase;
   text-align: center;
-  font-size: 8rem;
-  line-height: 7rem;
+  font-size: 2rem;
+  color: #ffffff;
+  font-weight: 700;
+}
+.instructions-off {
+  display: none;
 }
 .section {
   position: relative;
-  height: 80vh;
+  height: 100vh;
   width: 100vw;
   overflow: hidden;
   background-size: cover;
@@ -28,12 +32,19 @@ h1 {
   background-image: url('img/bg/bg-tyler.jpg'), url('img/bg/bg-pink.jpg'), url('img/bg/bg-gianni.jpg'),  url('img/bg/bg-blue.jpg'), url('img/bg/bg-culver.jpg'), url('img/bg/bg-red.jpg');
   transition: background-image .2s ease-in;
 }
-/* DESKTOP */
-@media screen and (min-device-width: 768px) {
-  .section {
-    height: 100vh;
+
+/* mobile */
+  @media (orientation:portrait) {
+    #canvas p {
+      font-size: 4rem;
+    }
+    .section {
+      height: 80vh;
+    }
+    .preload {
+        background-image: url('img/bg/bg-tyler-mobile.jpg'), url('img/bg/bg-pink-mobile.jpg'), url('img/bg/bg-gianni-mobile.jpg'), url('img/bg/bg-blue-mobile.jpg'),  url('img/bg/bg-culver-mobile.jpg'), url('img/bg/bg-red-mobile.jpg');
+    }
   }
-}
 
 
 
@@ -69,28 +80,24 @@ h1 {
   background-color: #AB004F;
   transition: all .2s ease-in;
 }
-@media (orientation:portrait) {
-  .tyler {
-    background-image: url('img/bg/bg-tyler-mobile.jpg');
-  }
-  .gianni {
-    background-image: url('img/bg/bg-gianni-mobile.jpg');
-  }
-  .culver {
-    background-image: url('img/bg/bg-culver-mobile.jpg');
-  }
-  .pink {
-    background-image: url('img/bg/bg-pink-mobile.jpg');
-  }
-  .blue {
-    background-image: url('img/bg/bg-blue-mobile.jpg');
-  }
-  .red {
-    background-image: url('img/bg/bg-red-mobile.jpg');
-  }
 
-  .preload {
-      background-image: url('img/bg/bg-tyler-mobile.jpg'), url('img/bg/bg-pink-mobile.jpg'), url('img/bg/bg-gianni-mobile.jpg'), url('img/bg/bg-blue-mobile.jpg'),  url('img/bg/bg-culver-mobile.jpg'), url('img/bg/bg-red-mobile.jpg');
+  @media (orientation:portrait) {
+    .tyler {
+      background-image: url('img/bg/bg-tyler-mobile.jpg');
+    }
+    .gianni {
+      background-image: url('img/bg/bg-gianni-mobile.jpg');
+    }
+    .culver {
+      background-image: url('img/bg/bg-culver-mobile.jpg');
+    }
+    .pink {
+      background-image: url('img/bg/bg-pink-mobile.jpg');
+    }
+    .blue {
+      background-image: url('img/bg/bg-blue-mobile.jpg');
+    }
+    .red {
+      background-image: url('img/bg/bg-red-mobile.jpg');
+    }
   }
-
-}

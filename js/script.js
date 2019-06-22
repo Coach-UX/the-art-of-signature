@@ -45,7 +45,7 @@ world.bodies = [];
 // create a body with an attractor
 var attractiveBody = Bodies.circle(width / 2, height / 2, 70, {
   render: {
-    fillStyle: '#718FC6'
+    fillStyle: '#F4E1D3'
   },
   isStatic: true,
 
@@ -206,10 +206,12 @@ Events.on(mouseConstraint, "mouseup", function(event) {
   document.getElementById('canvas').className = 'section ' + nextItem();
 });
 
+function hide_instructions() {
+  document.getElementById('canvas').getElementsByTagName('p')[0].setAttribute('class', 'instructions-off');
+};
+
 // run the engine
 Engine.run(engine);
-
-
 
 
 
