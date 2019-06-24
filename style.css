@@ -1,31 +1,50 @@
-h1 {
+#canvas p {
   position: absolute;
   left: 50%;
-  top: 45%;
+  top: 50%;
   transform: translate(-50%, -50%);
   font-family: 'Barlow Condensed', sans-serif;
   text-transform: uppercase;
   text-align: center;
-  font-size: 8rem;
-  line-height: 7rem;
+  font-size: 2rem;
+  color: #ffffff;
+  font-weight: 700;
 }
-
+.instructions-off {
+  display: none;
+}
 .section {
   position: relative;
-  height: 80vh;
+  height: 100vh;
   width: 100vw;
   overflow: hidden;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: center center;
   background-color: #F3E0D2;
 }
-/* DESKTOP */
-@media screen and (min-device-width: 768px) {
-  .section {
-    height: 100vh;
-  }
+.sudit {
+  background-image: url('img/bg/bg-sudit.jpg');
+  background-position: left;
+  background-size: contain;
 }
+.preload {
+  background-image: url('img/bg/bg-tyler.jpg'), url('img/bg/bg-pink.jpg'), url('img/bg/bg-gianni.jpg'),  url('img/bg/bg-blue.jpg'), url('img/bg/bg-culver.jpg'), url('img/bg/bg-red.jpg');
+  transition: background-image .2s ease-in;
+}
+
+/* mobile */
+  @media (orientation:portrait) {
+    #canvas p {
+      font-size: 4rem;
+    }
+    .section {
+      height: 80vh;
+    }
+    .preload {
+        background-image: url('img/bg/bg-tyler-mobile.jpg'), url('img/bg/bg-pink-mobile.jpg'), url('img/bg/bg-gianni-mobile.jpg'), url('img/bg/bg-blue-mobile.jpg'),  url('img/bg/bg-culver-mobile.jpg'), url('img/bg/bg-red-mobile.jpg');
+    }
+  }
 
 
 
@@ -33,38 +52,52 @@ h1 {
 /* backgrounds */
 .tyler {
   background-image: url('img/bg/bg-tyler.jpg');
+  background-color: #CDA479;
+  transition: all .2s ease-in;
 }
 .gianni {
-  background-image: url('img/bg/bg-gianni-.jpg');
+  background-image: url('img/bg/bg-gianni.jpg');
+  background-color: #F8333E;
+  transition: all .2s ease-in;
 }
 .culver {
   background-image: url('img/bg/bg-culver.jpg');
+  background-color: #F0E8D8;
+  transition: all .2s ease-in;
 }
-.kendra {
-  background-image: url('img/bg/bg-kendra.jpg');
+.pink {
+  background-image: url('img/bg/bg-pink.jpg');
+  background-color: #C8878D;
+  transition: all .2s ease-in;
 }
-.hunter {
-  background-image: url('img/bg/bg-hunter.jpg');
+.blue {
+  background-image: url('img/bg/bg-blue.jpg');
+  background-color: #95A8CB;
+  transition: all .2s ease-in;
 }
-.ooo {
-  background-image: url('img/bg/bg-ooo.jpg');
+.red {
+  background-image: url('img/bg/bg-red.jpg');
+  background-color: #AB004F;
+  transition: all .2s ease-in;
 }
-.sudit {
-  background-image: url('img/bg/bg-sudit.jpg');
-  background-position: left;
-  background-size: contain;
-}
-@media (orientation:portrait) {
-  .gianni {
-    background-image: url('img/bg/bg-gianni-mobile.jpg');
+
+  @media (orientation:portrait) {
+    .tyler {
+      background-image: url('img/bg/bg-tyler-mobile.jpg');
+    }
+    .gianni {
+      background-image: url('img/bg/bg-gianni-mobile.jpg');
+    }
+    .culver {
+      background-image: url('img/bg/bg-culver-mobile.jpg');
+    }
+    .pink {
+      background-image: url('img/bg/bg-pink-mobile.jpg');
+    }
+    .blue {
+      background-image: url('img/bg/bg-blue-mobile.jpg');
+    }
+    .red {
+      background-image: url('img/bg/bg-red-mobile.jpg');
+    }
   }
-  .kendra {
-    background-image: url('img/bg/bg-kendra-mobile.jpg');
-  }
-  .hunter {
-    background-image: url('img/bg/bg-hunter-mobile.jpg');
-  }
-  .ooo {
-    background-image: url('img/bg/bg-ooo-mobile.jpg');
-  }
-}
