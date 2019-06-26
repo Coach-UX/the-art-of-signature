@@ -17,7 +17,14 @@ var Engine = Matter.Engine,
     Mouse = Matter.Mouse,
     Vertices = Matter.Vertices,
     height = window.innerHeight,
-    width = window.innerWidth;
+    width = window.innerWidth,
+    mobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
+    cursor = 'img/cursor-desktop.svg';
+
+// change cursor image on mobile devices
+if(mobileDevice) {
+   var cursor = 'img/cursor-mobile.svg';
+}
 
 // create engine
 var engine = Engine.create();
@@ -46,7 +53,7 @@ world.bodies = [];
 var attractiveBody = Bodies.circle(width / 2, height / 2, 110, {
   render: {
     sprite: {
-      texture: 'img/cursor.svg'
+      texture: cursor
     }
   },
   isStatic: true,
@@ -194,6 +201,10 @@ World.add(world, mouseConstraint);
 
 // add more bodies and cycle through background images on every mouse click
 var backgrounds = ["tyler","pink","gianni","blue","culver","red"];
+// change background images on mobile devices
+if(mobileDevice) {
+   var backgrounds = ["tyler-mobile","pink-mobile","gianni-mobile","blue-mobile","culver-mobile","red-mobile"];
+}
 var i = 0;
 
   // get next item in backgrounds array
@@ -210,22 +221,3 @@ Events.on(mouseConstraint, "mouseup", function(event) {
 
 // run the engine
 Engine.run(engine);
-
-
-
-
-
-
-
-// ARCHIVED SNIPPETS
- // add boundaries to prevent objects from going outside of the canvas
-      // var offset = 10,
-      //   options = {
-      //       isStatic: true
-      //   };
-      // World.add(world, [
-      //     Bodies.rectangle(width/2, -offset, width + 2 * offset, 20, options),
-      //     Bodies.rectangle(width/2, height + offset, width + 2 * offset, 20, options),
-      //     Bodies.rectangle(width + offset, height/2, 20, height + 2 * offset, options),
-      //     Bodies.rectangle(-offset, height/2, 20, height + 2 * offset, options)
-      // ]);

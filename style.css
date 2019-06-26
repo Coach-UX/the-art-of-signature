@@ -1,4 +1,70 @@
-.section {
+.preload, .tyler, .gianni, .culver, .pink, .blue, .red, .tyler-mobile, .gianni-mobile, .culver-mobile, .pink-mobile, .blue-mobile, .red-mobile  {
+  transition: background-image .2s ease-in;
+}
+.preload {
+  background-image: url('img/bg/bg-tyler.jpg'), url('img/bg/bg-pink.jpg'), url('img/bg/bg-gianni.jpg'),  url('img/bg/bg-blue.jpg'), url('img/bg/bg-culver.jpg'), url('img/bg/bg-red.jpg');
+}
+.tyler {
+  background-image: url('img/bg/bg-tyler.jpg');
+  background-color: #CDA479;
+}
+.gianni {
+  background-image: url('img/bg/bg-gianni.jpg');
+  background-color: #F8333E;
+}
+.culver {
+  background-image: url('img/bg/bg-culver.jpg');
+  background-color: #F0E8D8;
+}
+.pink {
+  background-image: url('img/bg/bg-pink.jpg');
+  background-color: #C8878D;
+}
+.blue {
+  background-image: url('img/bg/bg-blue.jpg');
+  background-color: #95A8CB;
+}
+.red {
+  background-image: url('img/bg/bg-red.jpg');
+  background-color: #AB004F;
+}
+.tyler-mobile {
+  background-image: url('img/bg/bg-tyler-mobile.jpg');
+  background-color: #CDA479;
+}
+.gianni-mobile {
+  background-image: url('img/bg/bg-gianni-mobile.jpg');
+  background-color: #F8333E;
+}
+.culver-mobile {
+  background-image: url('img/bg/bg-culver-mobile.jpg');
+  background-color: #F0E8D8;
+}
+.pink-mobile {
+  background-image: url('img/bg/bg-pink-mobile.jpg');
+  background-color: #C8878D;
+}
+.blue-mobile {
+  background-image: url('img/bg/bg-blue-mobile.jpg');
+  background-color: #95A8CB;
+}
+.red-mobile {
+  background-image: url('img/bg/bg-red-mobile.jpg');
+  background-color: #AB004F;
+}
+@media (orientation:portrait) {
+  .preload {
+      background-image: url('img/bg/bg-tyler-mobile.jpg'), url('img/bg/bg-pink-mobile.jpg'), url('img/bg/bg-gianni-mobile.jpg'), url('img/bg/bg-blue-mobile.jpg'),  url('img/bg/bg-culver-mobile.jpg'), url('img/bg/bg-red-mobile.jpg');
+  }
+}
+
+
+
+/* IGNORE */
+body {
+  margin: 0;
+}
+div {
   position: relative;
   height: 100vh;
   width: 100vw;
@@ -8,75 +74,3 @@
   background-position: center center;
   background-color: #F3E0D2;
 }
-.sudit {
-  background-image: url('img/bg/bg-sudit.jpg');
-  background-position: left;
-  background-size: contain;
-}
-.preload {
-  background-image: url('img/bg/bg-tyler.jpg'), url('img/bg/bg-pink.jpg'), url('img/bg/bg-gianni.jpg'),  url('img/bg/bg-blue.jpg'), url('img/bg/bg-culver.jpg'), url('img/bg/bg-red.jpg');
-  transition: background-image .2s ease-in;
-}
-
-/* mobile */
-  @media (orientation:portrait) {
-    .preload {
-        background-image: url('img/bg/bg-tyler-mobile.jpg'), url('img/bg/bg-pink-mobile.jpg'), url('img/bg/bg-gianni-mobile.jpg'), url('img/bg/bg-blue-mobile.jpg'),  url('img/bg/bg-culver-mobile.jpg'), url('img/bg/bg-red-mobile.jpg');
-    }
-  }
-
-
-
-
-/* backgrounds */
-.tyler {
-  background-image: url('img/bg/bg-tyler.jpg');
-  background-color: #CDA479;
-  transition: all .2s ease-in;
-}
-.gianni {
-  background-image: url('img/bg/bg-gianni.jpg');
-  background-color: #F8333E;
-  transition: all .2s ease-in;
-}
-.culver {
-  background-image: url('img/bg/bg-culver.jpg');
-  background-color: #F0E8D8;
-  transition: all .2s ease-in;
-}
-.pink {
-  background-image: url('img/bg/bg-pink.jpg');
-  background-color: #C8878D;
-  transition: all .2s ease-in;
-}
-.blue {
-  background-image: url('img/bg/bg-blue.jpg');
-  background-color: #95A8CB;
-  transition: all .2s ease-in;
-}
-.red {
-  background-image: url('img/bg/bg-red.jpg');
-  background-color: #AB004F;
-  transition: all .2s ease-in;
-}
-
-  @media (orientation:portrait) {
-    .tyler {
-      background-image: url('img/bg/bg-tyler-mobile.jpg');
-    }
-    .gianni {
-      background-image: url('img/bg/bg-gianni-mobile.jpg');
-    }
-    .culver {
-      background-image: url('img/bg/bg-culver-mobile.jpg');
-    }
-    .pink {
-      background-image: url('img/bg/bg-pink-mobile.jpg');
-    }
-    .blue {
-      background-image: url('img/bg/bg-blue-mobile.jpg');
-    }
-    .red {
-      background-image: url('img/bg/bg-red-mobile.jpg');
-    }
-  }
