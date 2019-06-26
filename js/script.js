@@ -43,9 +43,11 @@ world.gravity.y = 0.01;
 world.bodies = [];
 
 // create a body with an attractor
-var attractiveBody = Bodies.circle(width / 2, height / 2, 70, {
+var attractiveBody = Bodies.circle(width / 2, height / 2, 110, {
   render: {
-    fillStyle: '#F4E1D3'
+    sprite: {
+      texture: 'img/cursor.svg'
+    }
   },
   isStatic: true,
 
@@ -205,10 +207,6 @@ Events.on(mouseConstraint, "mouseup", function(event) {
   World.add(world, bodies());
   document.getElementById('canvas').className = 'section ' + nextItem();
 });
-
-function hide_instructions() {
-  document.getElementById('canvas').getElementsByTagName('p')[0].setAttribute('class', 'instructions-off');
-};
 
 // run the engine
 Engine.run(engine);
