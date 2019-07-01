@@ -24,7 +24,7 @@ var Engine = Matter.Engine,
 // change cursor image on mobile devices
 if(mobileDevice) {
    var cursor = 'img/cursor-mobile.svg';
-}
+};
 
 // create engine
 var engine = Engine.create();
@@ -218,6 +218,15 @@ Events.on(mouseConstraint, "mouseup", function(event) {
   World.add(world, bodies());
   document.getElementById('canvas').className = 'section ' + nextItem();
 });
+
+// resize canvas on browser resize (desktop only)
+if(!mobileDevice) {
+  window.addEventListener('resize', function () {
+      "use strict";
+      window.location.reload();
+  });
+};
+
 
 // run the engine
 Engine.run(engine);
